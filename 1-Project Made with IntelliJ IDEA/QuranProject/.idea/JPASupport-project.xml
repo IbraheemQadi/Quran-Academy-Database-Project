@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoGeneratorSettingsState">
+    <option name="ignoredFields">
+      <set>
+        <option value="" />
+      </set>
+    </option>
+    <option name="moduleName" value="lec33" />
+    <option name="moduleNameToSettings">
+      <map>
+        <entry key="lec33">
+          <value>
+            <ModuleSettings>
+              <option name="controllerParentDirectory" value="$PROJECT_DIR$/src" />
+              <option name="dtoParentDirectory" value="$PROJECT_DIR$/src" />
+              <option name="entityPackageName" value="com.example.lec33" />
+              <option name="entityParentDirectory" value="$PROJECT_DIR$/src" />
+              <option name="generateMapperXml" value="true" />
+              <option name="generateRepository" value="false" />
+              <option name="mapperXmlParentDirectory" value="C:\hp\lec33\resources" />
+              <option name="repositoryParentDirectory" value="$PROJECT_DIR$/src" />
+              <option name="serviceParentDirectory" value="$PROJECT_DIR$/src" />
+              <option name="voParentDirectory" value="$PROJECT_DIR$/src" />
+            </ModuleSettings>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="removeEntityPrefix" value="" />
+    <option name="useLombok" value="false" />
+  </component>
+  <component name="DatabaseSettingsState">
+    <option name="database" value="quran" />
+    <option name="driverClass" value="oracle.jdbc.driver.OracleDriver" />
+    <option name="driverPath" value="C:\Users\hp\Documents\NetBeansProjects\lec22\ojdbc8.jar" />
+    <option name="port" value="1521" />
+    <option name="url" value="jdbc:oracle:thin:@localhost:1521:orcl" />
+    <option name="username" value="ibraheem" />
+  </component>
+</project>
