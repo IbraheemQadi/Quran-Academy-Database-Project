@@ -1,0 +1,17 @@
+.root{
+    -fx-background-color: #0598ff;
+}
+
+.sidebarItem:hover{
+    -fx-background-color: #146886;
+    -fx-border-color: WHITE;
+    -fx-border-width: 0px 0px 0px 5px;
+}
+.chart {
+    -fx-background-image: url("imgs/1.jpg");
+}
+
+.combo-box .cell:selected {
+    -fx-text-fill: blue;
+}
+

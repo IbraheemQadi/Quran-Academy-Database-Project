@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.10.0.final using JasperReports Library version 6.10.0-unknown  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="studentReport" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="3bb8f8de-6799-4ae5-99e6-d4d1bfe5349d">
+	<style name="Table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="Reports" uuid="9b0a3413-0714-4420-be4c-d077ae799cee">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="reportDate" class="java.sql.Date"/>
+		<field name="memorizeSurah" class="java.lang.String"/>
+		<field name="memorizeRange" class="java.lang.String"/>
+		<field name="memorizeMark" class="java.lang.Float"/>
+		<field name="reviewSurah" class="java.lang.String"/>
+		<field name="reviewRange" class="java.lang.String"/>
+		<field name="reviewMark" class="java.lang.Float"/>
+	</subDataset>
+	<subDataset name="reportDataset" uuid="85e10f35-c416-46f3-9c78-2d5b4c93ca47">
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="st_id" class="java.lang.Integer"/>
+	</subDataset>
+	<parameter name="studentId" class="java.lang.Integer"/>
+	<parameter name="studentName" class="java.lang.String"/>
+	<parameter name="studentSupervisor" class="java.lang.String"/>
+	<parameter name="studentCenter" class="java.lang.String"/>
+	<parameter name="studentAddress" class="java.lang.String"/>
+	<parameter name="studentBD" class="java.lang.String"/>
+	<parameter name="studentPhoneNumber" class="java.lang.Integer"/>
+	<parameter name="Reports" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
+	<parameter name="memorzieAvg" class="java.lang.Float"/>
+	<parameter name="reviewAvg" class="java.lang.Float"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="110" splitType="Stretch">
+			<staticText>
+				<reportElement x="111" y="5" width="320" height="70" uuid="e971625a-2980-41bf-93dc-fa59d9854306"/>
+				<textElement textAlignment="Center">
+					<font fontName="ArialAr" size="30" isBold="true"/>
+					<paragraph lineSpacingSize="8.0"/>
+				</textElement>
+				<text><![CDATA[لجنة نابلس لتحفيظ القرآن]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="177" y="43" width="200" height="30" uuid="3ce1c993-08a2-47c9-b08a-be7d9bdd6c7f"/>
+				<textElement textAlignment="Center">
+					<font fontName="ArialAr" size="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{studentCenter}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="505" splitType="Stretch">
+			<staticText>
+				<reportElement x="380" y="10" width="100" height="30" uuid="4534210e-a77e-4be5-ba22-5155a6941691"/>
+				<textElement textAlignment="Right">
+					<font fontName="ArialAr" size="18"/>
+				</textElement>
+				<text><![CDATA[رقم الطالب : ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="380" y="50" width="100" height="30" uuid="7b4d1c82-fad1-4116-be9f-75c61f8ef804"/>
+				<textElement textAlignment="Right">
+					<font fontName="ArialAr" size="18"/>
+				</textElement>
+				<text><![CDATA[اسم الطالب :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="380" y="90" width="100" height="30" uuid="eb0e5289-59c6-4118-a6b9-9cc26075ee31"/>
+				<textElement textAlignment="Right">
+					<font fontName="ArialAr" size="18" isBold="false"/>
+				</textElement>
+				<text><![CDATA[المشرف : ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="160" y="10" width="100" height="30" uuid="e1d0e8d1-d3f7-40e3-8b8b-e1be789806c8"/>
+				<textElement textAlignment="Right">
+					<font fontName="ArialAr" size="18"/>
+				</textElement>
+				<text><![CDATA[العنوان : ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="160" y="50" width="100" height="30" uuid="b0e80cdb-3c88-4ccf-a71c-55e35c9f37ec"/>
+				<textElement textAlignment="Right">
+					<font fontName="ArialAr" size="18"/>
+				</textElement>
+				<text><![CDATA[تاريخ الميلاد :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="160" y="90" width="100" height="30" uuid="4739970e-b007-4aa3-a745-0f19998796c5"/>
+				<textElement textAlignment="Right">
+					<font fontName="ArialAr" size="18"/>
+				</textElement>
+				<text><![CDATA[رقم الهاتف :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="290" y="10" width="110" height="30" uuid="df53574e-39fd-44dd-a353-8ff5fc5806e2"/>
+				<textElement textAlignment="Right">
+					<font fontName="ArialAr" size="18"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{studentId}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="290" y="50" width="110" height="30" uuid="dd75b468-7679-4c16-9f07-a32e7f1e6024"/>
+				<textElement textAlignment="Right">
+					<font fontName="ArialAr" size="18"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{studentName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="290" y="90" width="110" height="30" uuid="6db5b6cc-f56f-47fa-960e-7086c2e536db"/>
+				<textElement textAlignment="Right">
+					<font fontName="ArialAr" size="18"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{studentSupervisor}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="47" y="10" width="110" height="30" uuid="87b97b4d-5186-437a-893d-6616496306a7"/>
+				<textElement textAlignment="Right">
+					<font fontName="ArialAr" size="18"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{studentAddress}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="47" y="50" width="110" height="30" uuid="66c34981-11be-4f19-9f80-3ff0b9402c1f"/>
+				<textElement textAlignment="Right">
+					<font fontName="ArialAr" size="18"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{studentBD}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="47" y="90" width="110" height="30" uuid="639f2c62-5739-4920-b0a6-124256465beb"/>
+				<textElement textAlignment="Right">
+					<font fontName="ArialAr" size="18"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{studentPhoneNumber}]]></textFieldExpression>
+			</textField>
+			<componentElement>
+				<reportElement x="0" y="190" width="560" height="80" uuid="d6e45241-8f6f-460e-80c5-334d8c34da06">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+					<property name="com.jaspersoft.studio.table.style.table_header" value="Table_TH"/>
+					<property name="com.jaspersoft.studio.table.style.column_header" value="Table_CH"/>
+					<property name="com.jaspersoft.studio.table.style.detail" value="Table_TD"/>
+					<property name="com.jaspersoft.studio.components.autoresize.proportional" value="true"/>
+				</reportElement>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="Reports" uuid="5293aaf6-9b95-413f-83e3-f91757051dbd">
+						<dataSourceExpression><![CDATA[$P{Reports}]]></dataSourceExpression>
+					</datasetRun>
+					<jr:column width="67" uuid="41860429-c1fc-449c-a222-37182142c9b8">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column1"/>
+						<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="67" height="30" uuid="c2823fc6-a58e-47df-9255-363725bfd30d"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="ArialAr" size="16"/>
+								</textElement>
+								<text><![CDATA[علامة المراجعة]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="67" height="30" uuid="ee4a5eed-0bf9-4113-81d0-7d0445cb9d78"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="ArialAr" size="16"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{reviewMark}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="97" uuid="7adabee2-a8fb-430f-81b2-26da9d70ccec">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column2"/>
+						<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="97" height="30" uuid="25ba249a-e239-4c23-b43e-31f10ee18dc0"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="ArialAr" size="16"/>
+								</textElement>
+								<text><![CDATA[الآيات]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="97" height="30" uuid="44febf9c-3dc5-4730-b67e-e54a6b7e157c"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="ArialAr" size="16"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{reviewRange}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="83" uuid="917bb428-144b-4c44-a651-5b475af5203d">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column3"/>
+						<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="83" height="30" uuid="3af47c01-c100-486c-b186-20e1a2c04ab3"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="ArialAr" size="16"/>
+								</textElement>
+								<text><![CDATA[سورة المراجعة]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="83" height="30" uuid="fe236fee-017a-42d4-857a-375bba3249b7"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="ArialAr" size="16"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{reviewSurah}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="72" uuid="3d40ff0b-5174-4f66-8e81-8c7a14e70307">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column4"/>
+						<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="72" height="30" uuid="5db6b498-4f92-4259-bf20-957f0d25978b"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="ArialAr" size="16"/>
+								</textElement>
+								<text><![CDATA[علامة الحفظ]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="72" height="30" uuid="8c881426-33aa-40d3-9f25-81785f0cffd4"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="ArialAr" size="16"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{memorizeMark}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="86" uuid="b4886466-4284-4ee7-99f5-7aaede7c79a3">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column5"/>
+						<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="86" height="30" uuid="321dded8-fcc9-4860-9aea-6164a545f1d1"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="ArialAr" size="16"/>
+								</textElement>
+								<text><![CDATA[الآيات]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="86" height="30" uuid="59124467-b1fa-46f7-8b08-de5e3ee27d17"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="ArialAr" size="16"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{memorizeRange}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="78" uuid="130cc0fc-4724-4341-b50a-5f2905786a87">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column6"/>
+						<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="78" height="30" uuid="ac88ff6e-7c12-4967-8582-f399e4227faa"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="ArialAr" size="16"/>
+								</textElement>
+								<text><![CDATA[سورة الحفظ]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="78" height="30" uuid="741dc86e-5bd2-4ce4-aaa6-80b6fb1db265"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="ArialAr" size="16"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{memorizeSurah}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="77" uuid="6c86d66a-a3aa-42ff-9717-b15f50467348">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column7"/>
+						<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="77" height="30" uuid="725c6842-e02b-4cda-9e8f-a9a30772024d"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="ArialAr" size="16"/>
+								</textElement>
+								<text><![CDATA[تاريخ التقرير]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="77" height="30" uuid="247e6f16-8a2e-4d12-af79-b8b842b3ae6e"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="ArialAr" size="16"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{reportDate}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+			<staticText>
+				<reportElement x="330" y="130" width="150" height="30" uuid="9236f132-b900-4f9f-99cb-68c217d8be11"/>
+				<textElement textAlignment="Right">
+					<font fontName="ArialAr" size="18" isBold="false"/>
+				</textElement>
+				<text><![CDATA[معدل الحفظ التراكمي  : ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="86" y="130" width="174" height="30" uuid="83d7f50c-169c-4323-9e35-87540c74ec6b"/>
+				<textElement textAlignment="Right">
+					<font fontName="ArialAr" size="18" isBold="false"/>
+				</textElement>
+				<text><![CDATA[معدل المراجعة التراكمي : ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="290" y="130" width="50" height="30" uuid="d64ace36-0f92-4be0-b60f-4482cac949fc"/>
+				<textElement textAlignment="Right">
+					<font fontName="ArialAr" size="18"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{memorzieAvg}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="45" y="130" width="50" height="30" uuid="4c5b4e5b-fd29-4fb0-a0e0-1f89a3b6f5c7"/>
+				<textElement textAlignment="Right">
+					<font fontName="ArialAr" size="18"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{reviewAvg}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>
